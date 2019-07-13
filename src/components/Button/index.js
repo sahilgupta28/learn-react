@@ -1,14 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "../../styles.css";
 
-const Button = ({ name }) => <button>{name}</button>;
+const Button = ({ shape, size }) => <button className={shape + " " + size}>{shape}-{size}</button>;
 
 Button.defaultProps = {
-  name: "Test"
+  shape: "rectangle"
 };
 
-Button.propTypes = {
-  name: PropTypes.string
+Button.defaultProps = {
+  size: "medium"
 };
 
 export default Button;

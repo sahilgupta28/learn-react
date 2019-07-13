@@ -1,28 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Button from "./components/Button";
-import "./styles.css";
 
 class App extends React.Component {
   state = {
-    shape: "rectangle"
+    re: "rectangle",
+    ra: "radius",
+    ov: "oval",
+    s: "small",
+    m: "medium",
+    l: "large"
   };
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        shape: "rectangle"
-      });
-    }, 2000);
-  }
 
   render() {
     return (
       <>
-        <Button name="Test1" />
-        <Button name={this.state.shape} />
-        <Button />
-        <Button />
+        <Button shape={this.state.re} size={this.state.l}/>
+        <Button shape={this.state.re} size={this.state.m}/>
+        <Button shape={this.state.re} size={this.state.s}/>
+        <br/>
+        <Button shape={this.state.ra} size={this.state.l} />
+        <Button shape={this.state.ra} size={this.state.m} />
+        <Button shape={this.state.ra} size={this.state.s} />
+        <br/>
+        <Button shape={this.state.ov} size={this.state.l} />
+        <Button shape={this.state.ov} size={this.state.m} />
+        <Button shape={this.state.ov} size={this.state.s} />
       </>
     );
   }
